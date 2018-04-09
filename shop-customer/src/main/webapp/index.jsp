@@ -19,7 +19,7 @@
                     <td width="10%">
                         <img src="<%=request.getContextPath()%>/images/header_logo.gif"/>
                     </td>
-                    <td width="10%">
+                    <td width="*%" align="center">
                         <h1><span style="color: red; ">欢迎<span style="color: blue; ">${loginName}</span>来到本系统</span></h1>
                     </td>
                 </tr>
@@ -37,9 +37,9 @@
         </ul>
     </div>
     <div data-options="region:'center',title:'内容'" style="padding:5px;background:#eee;" >
-        <div id="tt" class="easyui-tabs" style="fit:true">
-            <div title="首页">
-                <div style="background-color: pink;" data-options="fit:true">
+        <div id="tt" class="easyui-tabs" >
+            <div title="首页" >
+                <div style="background-color: pink;width: auto;height:auto">
                     <div style="text-align: center;" data-options="fit:true">
                         <span style="color: red; ">欢迎光临！</span>
                     </div>
