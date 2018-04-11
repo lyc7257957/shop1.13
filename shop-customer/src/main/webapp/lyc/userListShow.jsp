@@ -63,9 +63,7 @@
             ]], toolbar: [{
                 iconCls: 'icon-reload',
                 handler: function () {
-                    var row = $("#user-table").datagrid('getSelected');
-                    var id = row.userid;
-                    alert(id);
+                    $('#user-table').datagrid('reload')
                 }
             }, '-', {
                 iconCls: 'icon-add',
@@ -73,8 +71,8 @@
                    /* ---------新增用户开始------------*/
                     $('#user-win').dialog({
                         title: '添加',
-                        width: 960,
-                        height: 780,
+                        width: 500,
+                        height: 350,
                         closed: false,
                         href: '<%=request.getContextPath()%>/userController/jumpAddUser.jhtml',
                         modal: true,

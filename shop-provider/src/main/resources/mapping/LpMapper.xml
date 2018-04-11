@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jk.dao.LpDao">
+    <resultMap id="BaseResultMap" type="com.jk.model.LpAttributeOption" >
+        <id column="attributefuid" property="attributefuid" />
+        <result column="optionsname" property="optionsname"  />
+        <!--<result column="glid" property="glid"  />-->
+        <collection property="serises1" ofType="com.jk.model.LpAttribute">
+            <result column="attributename" property="attributename" jdbcType="VARCHAR" />
+        </collection>
+    </resultMap>
+
+ <select id="queryTotal"  resultType="long">
+ 	select count(*) from  xx_parameter where 1=1
+ </select>
+ <select id="queryTypePage"  resultType="com.jk.model.Parameter">
+     select *  from
+     (
+     select a.*,rownum rn from
+     (
+     select * from  xx_parameter sd
+
+     )a where  rownum &lt; ${end}
+     )sa left join xx_parameter_group se on sa.id = se.productcategory  where rn &gt; ${start}
+ </select>
+
+    <select id="chabrand2"  resultType="com.jk.model.Parameter">
+        select * from xx_parameter
+     </select>
+<delete id="deleteshan6">
+   delete from xx_parameter    where  id in
+    <foreach close=")" separator="," open="(" collection="shan23" index="index" item="item"> #{item} </foreach>
+</delete>
+     <insert id="addzeng2" parameterType="com.jk.model.Parameter">
+
+        insert into xx_parameter (id,name,orders,createDate,modifyDate) values(shop_dz.nextval,#{name},#{orders},#{createDate},#{modifyDate})
+
+    </insert>
+    <select id="huixian1"  resultType="com.jk.model.Parameter">
+        select * from xx_parameter where id=#{id}
+    </select>
+
+    <update id="updatexiugai4" parameterType="com.jk.model.Parameter">
+
+  update xx_parameter f set
+  f.createDate=#{createDate},
+  f.modifyDate=#{modifyDate},
+  f.orders=#{orders}
+
+  where f.id=#{id}
+
+    </update>
+<!--属性-->
+    <select id="brand1" resultType="long">
+
+        <!--查单表 -->
+        select  count(*) from xx_attribute_option
+
+
+    </select>
+
+    <select id="brand2" resultMap="BaseResultMap">
+     select *  from
+        (
+        select a.*,rownum rn from
+        (
+        select * from  xx_attribute_option mj
+
+        )a where  rownum &lt;=#{end}
+        )za left join xx_attribute xc on za.glid = xc.attributeid  where rn > #{start}
+
+
+    </select>
+    <delete id="deleteshuxing">
+        delete from xx_attribute_option    where  attributefuid in
+        <foreach close=")" separator="," open="(" collection="sx" index="index" item="item"> #{item} </foreach>
+    </delete>
+<select id="sujsp" resultType="com.jk.model.LpAttribute">
+
+    select * from xx_attribute aszw,xx_attribute_option acc where aszw.attributeid=acc.glid
+
+</select>
+
+    <insert id="sxaddjiaa" parameterType="com.jk.model.LpAttribute">
+        insert into xx_attribute (attributeid,attributename,attributeorders) values(shop_dz.nextval,#{attributename},#{attributeorders})
+    </insert>
+</mapper>

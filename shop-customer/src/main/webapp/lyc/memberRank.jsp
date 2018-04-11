@@ -76,9 +76,7 @@
             ]], toolbar: [{
                 iconCls: 'icon-reload',
                 handler: function () {
-                    var row = $("#MemberRank-table").datagrid('getSelected');
-                    var id = row.rankid;
-                    alert(id);
+                    $('#MemberRank-table').datagrid('reload')
                 }
             }, '-', {
                 iconCls: 'icon-add',

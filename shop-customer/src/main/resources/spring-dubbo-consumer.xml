@@ -31,5 +31,6 @@
 	 <dubbo:reference id="userService" interface="com.jk.service.IUserService" />
 	 <dubbo:reference id="treeService" interface="com.jk.service.ITreeService" />
 	 <dubbo:reference id="memberRankLycService" interface="com.jk.service.IMemberRankLycService" />
+	 <dubbo:reference id="lpService" interface="com.jk.service.LpService" />
 
 </beans>  

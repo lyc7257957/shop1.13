@@ -84,4 +84,15 @@ public class Tree implements Serializable {
                 ", code=" + code +
                 '}';
     }
+
+    public Tree(Integer id, String text, String url, Integer pid, Integer code) {
+        this.id = id;
+        this.text = text;
+        this.url = url;
+        this.pid = pid;
+        this.code = code;
+    }
+
+    public Tree() {
+    }
 }

@@ -1,6 +1,7 @@
 package com.jk.dao;
 
 import com.jk.model.User;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -9,7 +10,10 @@ import java.util.List;
  */
 public interface UserMapper {
 
-    List<User> queryUserList(User user);
+    List<User> queryUserList(@Param("user")User user);
 
-    void addUser(User user);
+    void addUser(@Param("user")User user);
+
+    User loginUser(@Param("user") User user);
+
 }

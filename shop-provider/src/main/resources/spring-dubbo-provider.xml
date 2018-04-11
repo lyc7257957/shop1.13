@@ -31,5 +31,5 @@
     <dubbo:service interface="com.jk.service.IUserService" ref="userService"></dubbo:service>
     <dubbo:service interface="com.jk.service.ITreeService" ref="treeService"></dubbo:service>
     <dubbo:service interface="com.jk.service.IMemberRankLycService" ref="memberRankLycService"></dubbo:service>
-
+    <dubbo:service interface="com.jk.service.LpService" ref="lpService"></dubbo:service>
 </beans>

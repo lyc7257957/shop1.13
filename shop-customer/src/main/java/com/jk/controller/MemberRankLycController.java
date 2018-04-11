@@ -18,7 +18,7 @@ public class MemberRankLycController extends BaseController{
 
 
     @Autowired
-    private IMemberRankLycService memberRankLycService;
+    IMemberRankLycService memberRankLycService;
 
     //jumpMemberRankShow
     @RequestMapping("/jumpMemberRankShow")

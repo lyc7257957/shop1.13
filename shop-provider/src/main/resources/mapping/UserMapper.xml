@@ -13,8 +13,10 @@
   <select id="queryUserList" parameterType="com.jk.model.User" resultType="com.jk.model.User">
       select * from t_user
   </select>
-
+    <select id="loginUser" parameterType="com.jk.model.User" resultType="com.jk.model.User">
+        select * from t_user where username=#{u.username}
+    </select>
     <insert id="addUser"  parameterType="com.jk.model.User">
-            insert into t_user(userid,username,name,email,isenabled,islocked)   values(SYS_GUID(),#{username},#{name},#{email},#{isenabled},#{islocked})
+        insert into t_user(userid,username,password,name,email,isenabled,islocked)   values(SYS_GUID(),#{username},'123',#{name},#{email},#{isenabled},#{islocked})
     </insert>
 </mapper>

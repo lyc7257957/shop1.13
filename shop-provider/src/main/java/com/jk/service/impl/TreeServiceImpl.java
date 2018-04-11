@@ -17,7 +17,8 @@ public class TreeServiceImpl implements ITreeService {
     @Autowired
     private TreeMapper treeMapper;
 
-    public List<Tree> queryTreeList(Tree tree) {
+    public List<Tree> queryTreeList(Tree tree)
+    {
         return treeMapper.queryTreeList(tree);
     }
 }

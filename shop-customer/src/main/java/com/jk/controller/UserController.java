@@ -6,6 +6,7 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
@@ -47,5 +48,17 @@ public class UserController extends BaseController {
     @RequestMapping("/addUser")
     public void addUser(User user) {
         userService.addUser(user);
+    }
+
+    //loginUser
+    @RequestMapping("/loginUser")
+    @ResponseBody
+    public String loginUser(User user) {
+        User finduser=userService.loginUser(user);
+        if (finduser != null) {
+            return "yes";
+        } else {
+            return "not";
+        }
     }
 }

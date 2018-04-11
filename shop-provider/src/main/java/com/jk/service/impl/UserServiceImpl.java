@@ -23,6 +23,12 @@ public class UserServiceImpl implements IUserService {
     }
 
     public void addUser(User user) {
+
         userMapper.addUser(user);
+    }
+
+    public User loginUser(User user) {
+        User finduser=userMapper.loginUser(user);
+        return finduser;
     }
 }

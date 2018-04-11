@@ -21,7 +21,7 @@
         <div>
             <label for="username">用户名</label>
             <input class="easyui-validatebox" type="text" name="username" data-options="required:true" value="${user.username}" />
-            <input type="hidden" name="userid" value="${user.userid}"/>
+            <%--<input type="hidden" name="userid" value="${user.userid}"/>--%>
         </div>
         <div>
             <label for="name">姓名</label>
@@ -29,21 +29,21 @@
         </div>
         <div>
             <label for="email">邮箱</label>
-            <input class="easyui-combobox" data-options="required:true,validType:'select'" name="email" value="${user.email}" />
+            <input class="easyui-validatebox" data-options="required:true,validType:'select'" name="email" value="${user.email}" />
         </div>
         <div>
-            <input type="radio" name="isenabled" value="1"  data-options="iconCls:'icon-search'" style="width:30px;height:30px"
+            <input type="radio" name="isenabled" value="1"  data-options="iconCls:'icon-search'" style="width:15px;height:15px"
                    <c:if test="${user.isenabled==1}">checked</c:if>
             >有效
-            <input type="radio" name="isenabled" value="2"  data-options="iconCls:'icon-search'" style="width:30px;height:30px"
+            <input type="radio" name="isenabled" value="2"  data-options="iconCls:'icon-search'" style="width:15px;height:15px"
                    <c:if test="${user.isenabled==2}">checked</c:if>
             >无效
         </div>
         <div>
-            <input type="radio" name="islocked" value="1"  data-options="iconCls:'icon-search'" style="width:30px;height:30px"
+            <input type="radio" name="islocked" value="1"  data-options="iconCls:'icon-search'" style="width:15px;height:15px"
                    <c:if test="${user.islocked==1}">checked</c:if>
             >未锁定
-            <input type="radio" name="isenabled" value="2"  data-options="iconCls:'icon-search'" style="width:30px;height:30px"
+            <input type="radio" name="islocked" value="2"  data-options="iconCls:'icon-search'" style="width:15px;height:15px"
                    <c:if test="${user.islocked==2}">checked</c:if>
             >锁定
         </div>
