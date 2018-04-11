@@ -17,17 +17,35 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/userController")
-public class UserController  extends BaseController{
+public class UserController extends BaseController {
     //日志记录
     private static final Logger logger = Logger.getLogger(UserController.class);
 
-        @Autowired
-        private IUserService userService;
+    @Autowired
+    private IUserService userService;
 
-        @RequestMapping("/queryUserList")
-        public void queryUserList(User user, HttpServletResponse response){
-            List<User> userList = userService.queryUserList(user);
-            System.out.print(userService);
-            super.writeJson(userList, response);
-        }
+    @RequestMapping("/queryUserList")
+    public void queryUserList(User user, HttpServletResponse response) {
+        List<User> userList = userService.queryUserList(user);
+        System.out.print(userService);
+        super.writeJson(userList, response);
+    }
+
+    //userController/jumpUserList.jhtml
+    @RequestMapping("/jumpUserList")
+    public String jumpUserList() {
+        return "lyc/userListShow";
+    }
+
+    //jumpAddUser
+    @RequestMapping("/jumpAddUser")
+    public String jumpAddUser() {
+        return "lyc/addUser";
+    }
+
+    //addUser
+    @RequestMapping("/addUser")
+    public void addUser(User user) {
+        userService.addUser(user);
+    }
 }

@@ -9,6 +9,7 @@ import java.util.List;
  */
 public interface UserMapper {
 
-    public List<User> queryUserList(User user);
+    List<User> queryUserList(User user);
 
+    void addUser(User user);
 }

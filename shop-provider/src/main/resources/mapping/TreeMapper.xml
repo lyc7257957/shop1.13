@@ -5,4 +5,5 @@
     <select id="queryTreeList" resultType="com.jk.model.Tree">
           select * from shop_tree
     </select>
+
 </mapper>

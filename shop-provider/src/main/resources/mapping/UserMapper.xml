@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.jk.dao.UserMapper">
-  <resultMap id="BaseResultMap" type="com.jk.model.User">
-    <id column="USERID" jdbcType="VARCHAR" property="userid" />
-    <result column="USERNAME" jdbcType="VARCHAR" property="username" />
-    <result column="USERPASS" jdbcType="VARCHAR" property="userpass" />
-    <result column="CREATETIME" jdbcType="TIMESTAMP" property="createtime" />
-    <result column="MODIFYTIME" jdbcType="TIMESTAMP" property="modifytime" />
-  </resultMap>
-
+    <!-- 查询总条数         concat(concat('%',#{username}),'%')  做模糊查询的
+		(select lower(sys_guid()) from dual)
+	 -->
+    <!-- 查询当前页的数据  在mybatis里  特殊符号需要转义
+            &lt; < 小于号
+            &gt; > 大于号
+            &amp; & 和
+            &apos;'单引号
+            &quot; " 双引号  -->
   <select id="queryUserList" parameterType="com.jk.model.User" resultType="com.jk.model.User">
-      SELECT * FROM T_USER
+      select * from t_user
   </select>
+
+    <insert id="addUser"  parameterType="com.jk.model.User">
+            insert into t_user(userid,username,name,email,isenabled,islocked)   values(SYS_GUID(),#{username},#{name},#{email},#{isenabled},#{islocked})
+    </insert>
 </mapper>

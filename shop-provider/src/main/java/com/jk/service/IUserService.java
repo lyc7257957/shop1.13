@@ -9,5 +9,8 @@ import java.util.List;
  */
 public interface IUserService {
 
-     public List<User>  queryUserList(User user);
+     List<User>  queryUserList(User user);
+
+     void addUser(User user);
 }
+

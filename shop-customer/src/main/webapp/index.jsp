@@ -30,7 +30,7 @@
     </div>
     <!--  <div data-options="region:'south',title:'South Title',split:true" style="height:100px;"></div> -->
     <!--  <div data-options="region:'east',iconCls:'icon-reload',title:'East',split:true" style="width:100px;"></div>    -->
-    <div data-options="region:'west',title:'导航',split:true" style="width:150px;">
+    <div data-options="region:'west',title:'导航',split:true" style="width:250px;">
         <ul id="menu-tree">
             <!-- <div id="aa" class="easyui-accordion" style="width:300px;height:200px;">
             </div>  -->
@@ -58,9 +58,9 @@
     <script type="text/javascript" src="<%=request.getContextPath()%>/My97DatePicker/WdatePicker.js"></script>
     <script type="text/javascript">
         $(function () {
-            $('#tt').tabs({
+            /*$('#tt').tabs({
                 fit: true,
-            });
+            });*/
             $('#menu-tree').tree({//初始化菜单树
                 url: '<%=request.getContextPath()%>/treeController/queryTreeList.jhtml',
                 parentField: 'pid',//实体类中父节点id的属性名

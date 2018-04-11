@@ -6,6 +6,8 @@ import java.io.Serializable;
  * Created by lyc on 2018/4/8.
  */
 public class Tree implements Serializable {
+
+    private static final long serialVersionUID = -3126647092182756142L;
     private Integer id;
 
     private String text;
