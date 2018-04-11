@@ -45,4 +45,11 @@ public class MemberRankLycController extends BaseController{
     public void addMemberRank(MemberRank memberRank) {
         memberRankLycService.addMemberRank(memberRank);
     }
+
+    //deleteMemberRankById
+    @RequestMapping("/deleteMemberRankById")
+    public void deleteMemberRankById(String id, HttpServletResponse response) {
+        memberRankLycService.deleteMemberRankById(id);
+        super.writeJson("deleteSuccess", response);
+    }
 }

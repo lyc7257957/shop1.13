@@ -11,5 +11,7 @@ import java.util.List;
 public interface MemberRankMapper {
     public List<MemberRank> queryMemberRankList(MemberRank memberRank) ;
 
-    public void addMemberRank(@Param("memberRank") MemberRank memberRank);
+    public void addMemberRank(MemberRank memberRank);
+
+    void deleteMemberRankById(@Param("id")String id);
 }

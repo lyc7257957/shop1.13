@@ -23,4 +23,8 @@ public class MemberRankLycServiceImpl implements IMemberRankLycService {
     public void addMemberRank(MemberRank memberRank) {
         memberRankMapper.addMemberRank(memberRank);
     }
+
+    public void deleteMemberRankById(String id) {
+        memberRankMapper.deleteMemberRankById(id);
+    }
 }

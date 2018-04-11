@@ -8,6 +8,9 @@
 
     <insert id="addMemberRank" parameterType="com.jk.model.MemberRank" >
         insert into shop_member_rank
-        values(seq_new.nextval,#{name},#{scale},#{amount},#{isdefault},#{isspecial},sysdate,sysdate)
+        values(seq_new.nextval,#{name},#{scale},#{amount},#{isDefault},#{isSpecial},sysdate,sysdate)
     </insert>
+    <delete id="deleteMemberRankById" >
+        DELETE shop_member_rank WHERE rankid =${id}
+    </delete>
 </mapper>

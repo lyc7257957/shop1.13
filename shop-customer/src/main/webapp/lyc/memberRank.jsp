@@ -37,7 +37,10 @@
             columns: [[
                 //{field:'che',checkbox:true},
                 //field:尽可能对应实体类中的属性名，必须保证唯一性    title：列标题   width：每列宽度
-                {field: 'rankid', title: '等级编号', width: 100, align: 'center'},
+                {field: '', title: '等级编号', width: 100, align: 'center',
+                    formatter: function (value, row, index) {
+                    return  index+1;
+                    }},
                 {field: 'name', title: '等级名称', width: 100, align: 'center'},
                 {field: 'scale', title: '优惠比例', width: 100, align: 'center'},
                 {field: 'amount', title: '消费金额 ', width: 100, align: 'center'},
@@ -132,6 +135,20 @@
                     var row = $("#MemberRank-table").datagrid('getSelected');
                     var id = row.rankid;
                     alert(id);
+                    $.ajax({
+                        url:"<%=request.getContextPath()%>/menberRankController/deleteMemberRankById.jhtml",
+                        type:"post",
+                        data:{"id":id},
+                        success:function(msg){
+                            $.messager.show({
+                                title:'提示消息',
+                                msg:'已成功删除',
+                                timeout:2000,
+                                showType:'slide',
+                            });
+                            $('#MemberRank-table').datagrid('reload')
+                        }
+                    });
                 }
             }, '-', {
                 iconCls: 'icon-man',

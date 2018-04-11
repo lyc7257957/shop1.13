@@ -13,4 +13,6 @@ public interface IMemberRankLycService {
     List<MemberRank> queryMemberRankList(MemberRank memberRank);
 
     void addMemberRank(MemberRank memberRank);
+
+    void deleteMemberRankById(String id);
 }
